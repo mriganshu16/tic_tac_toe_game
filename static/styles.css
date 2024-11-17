@@ -1,0 +1,187 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff6f61, #ffcc5c); /* Gradient background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #333;
+}
+
+/* Welcome Screen */
+.welcome-screen {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-screen h1 {
+    font-size: 36px;
+    color: #4caf50;
+}
+
+.welcome-screen p {
+    font-size: 18px;
+    color: #555;
+}
+
+.welcome-screen input,
+.welcome-screen select {
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4537;
+}
+
+/* Grid Layout */
+.game-container {
+    display: none;
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 330px;
+}
+
+.cell {
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.cell:active {
+    transform: scale(1.05);
+}
+
+.cell.highlight {
+    background-color: #ff6f61;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.pop {
+    animation: popEffect 0.3s ease-in-out;
+}
+
+@keyframes popEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.restart-button {
+    margin-top: 20px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.restart-button:hover {
+    background-color: #45a049;
+}
+
+/* Winner Message */
+#winner-message {
+    display: none;
+    font-size: 24px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#winner-name {
+    font-size: 48px;
+    color: #4caf50;
+    font-weight: bold;
+    animation: confetti 1s ease-in-out infinite;
+}
+
+@keyframes confetti {
+    0% { color: #ff6f61; }
+    50% { color: #ffcc5c; }
+    100% { color: #4caf50; }
+}
+
+#winner-name, #loser-name {
+    font-size: 24px;
+}
+
+#loser-name {
+    color: #f44336;
+}
+
+/* Confetti Effect - Optional */
+@keyframes confetti {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(5px, -5px);
+    }
+    100% {
+        transform: translate(-5px, 5px);
+    }
+}
+
+#winner-message p {
+    font-size: 18px;
+}
+
+/* Turn Indicator */
+#turn-indicator {
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}

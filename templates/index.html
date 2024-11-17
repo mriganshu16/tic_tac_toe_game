@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div class="welcome-screen">
+        <h1>Welcome to Tic Tac Toe!</h1>
+        <p>Enter your names and choose your symbols:</p>
+        <form id="player-form">
+            <input type="text" id="player1-name" placeholder="Player 1 Name" required>
+            <input type="text" id="player2-name" placeholder="Player 2 Name" required>
+            <div>
+                <label for="player1-symbol">Player 1 Symbol:</label>
+                <select id="player1-symbol">
+                    <option value="X">X</option>
+                    <option value="O">O</option>
+                </select>
+            </div>
+            <div>
+                <label for="player2-symbol">Player 2 Symbol:</label>
+                <select id="player2-symbol">
+                    <option value="O">O</option>
+                    <option value="X">X</option>
+                </select>
+            </div>
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
+
+    <!-- Game Screen -->
+    <div class="game-container" style="display:none;">
+        <h2 id="turn-indicator"></h2>
+        <div class="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <button class="restart-button" onclick="restartGame()">Restart Game</button>
+    </div>
+
+    <!-- Winner Message -->
+    <div id="winner-message" style="display:none;">
+        <h2 id="winner-name"></h2>
+        <p>Better luck next time, <span id="loser-name"></span>!</p>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
